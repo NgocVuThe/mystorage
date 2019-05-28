@@ -52,15 +52,13 @@
         {
             $path = "";
             $products = Product::all();
-            $view = "app/views/product/index.php";
-            include_once "app/views/layout/master.php";
+            include_once "app/views/product/index.php";
         }
 
         public function create()
        {
             $path = "";
-            $view = "app/views/product/create.php";
-            include_once "app/views/layout/master.php";
+            include_once "app/views/product/create.php";
         } 
 
         public function submit()
@@ -73,7 +71,7 @@
             $product->short_description = $_POST['short_description'];
             $product->status = $_POST['status'];
             // var_dump($product);die;
-
+            
             $product->save();
             header("location: ".$this->base_url);
         }
@@ -92,8 +90,7 @@
                 $path = "";
                 $id = $_GET['id'];
                 $products = Product::find($id);
-                $view = "app/views/product/edit.php";
-                include_once "app/views/layout/master.php";
+                include_once "app/views/product/edit.php";
             }
         }
 
@@ -111,7 +108,10 @@
 
             $products->update();
             header("location: ".$this->base_url);
-        }   
+        }
+        // public function pushView($view){
+        //     return $view;
+        // }  
     }
 
 ?>

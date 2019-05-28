@@ -1,18 +1,10 @@
-<head>
-    <script type="text/javascript">
-      function ConfirmDelete()
-      {
-          var conf = confirm("Delete Account?");
-            if (conf === false){    
-               return false;
-            }else{
-                alert('Delete student success!')
-            }
-      }
-    </script>
-</head>
-<body>
-    <div class="container">
+<?php
+include_once "app/views/layout/header.php";
+include_once "app/views/layout/sidebar.php";
+include_once "app/views/layout/navbar.php";
+?>
+<section class="content">
+    <div class="container-fluid">
     <h1>List</h1>
     <table class="table table-bordered table-delete">
         <thead>
@@ -48,4 +40,19 @@
         </tbody>
     </table>
     </div>
-</body>
+</section>
+<head>
+    <script type="text/javascript">
+      function ConfirmDelete()
+      {
+          var conf = confirm("Delete Account?");
+            if (conf === false){    
+               return false;
+            }else{
+                alert('Delete student success!')
+            }
+      }
+    </script>
+</head>
+<?php include_once "app/views/layout/footer.php";
+?>

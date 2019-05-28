@@ -1,11 +1,11 @@
-<body>
-
 <?php
-    // var_dump($products);die;
-
+include_once "app/views/layout/header.php";
+include_once "app/views/layout/sidebar.php";
+include_once "app/views/layout/navbar.php";
 ?>
-    <div class="container">
-        <h3 class="text-center">Edit Product</h3>
+<section class="content">
+    <div class="container-fluid">
+    <h3 class="text-center">Edit Product</h3>
         <form action="" method="POST" enctype="">
             <input type="hidden" name="id" value="<?=$products->id ?>">
             <div class="form-group">
@@ -47,4 +47,5 @@
             </div>
         </form>
     </div>
-</body>
+</section>
+<?php include_once "app/views/layout/footer.php";?>
