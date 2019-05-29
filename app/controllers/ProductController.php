@@ -56,6 +56,11 @@
             include_once "app/views/layout/master.php";
         }
 
+        // ob_*
+        // extract
+
+        // display("product.index", ['product'=> 'dfsdfsd']);
+
         public function create()
         {
             $path = "";

@@ -1,5 +1,3 @@
-<footer id="footer">
-        
 </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="public/admin/js/vendor/jquery/jquery-1.11.2.min.js"><\/script>')</script>
@@ -268,4 +266,4 @@
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script>
   </body>
-</html>
+</footer>

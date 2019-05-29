@@ -10,6 +10,22 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+ .bg-1{
+  height: auto;
+  /* background-color: red; */
+}
+.content-left{
+  height: 100px;
+  background-color: green;
+}
+.content-right{
+  height: auto;
+  /* background-color: blue; */
+}
+.content{
+  height: auto;
+}
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;

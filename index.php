@@ -12,6 +12,7 @@
     Route::get("/edit-products", 'ProductController@editProduct');
     Route::get("/delete-products", 'ProductController@del');
     
+    
 ?>
 
 <!-- <html>
