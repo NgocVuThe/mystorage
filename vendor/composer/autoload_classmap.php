@@ -11,4 +11,5 @@ return array(
     'App\\Controller\\ProductController' => $baseDir . '/app/controllers/ProductController.php',
     'App\\Model\\BaseModel' => $baseDir . '/app/models/BaseModel.php',
     'App\\Model\\Product' => $baseDir . '/app/models/Product.php',
+    'App\\Model\\Route' => $baseDir . '/app/models/Route.php',
 );

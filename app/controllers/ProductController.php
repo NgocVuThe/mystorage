@@ -6,57 +6,58 @@
     class ProductController extends BaseController
     {   
         
-        public function controller()
-        {
-            $url = isset( $_GET['url'] ) ? $_GET['url'] : '/';
+        // public function controller()
+        // {
+        //     $url = isset( $_GET['url'] ) ? $_GET['url'] : '/';
+        //     // var_dump($url);die;
+        //     switch ($url) {
 
-            switch ($url) {
+        //         case $url ==='products':
+        //             $this->index();
+        //             break;
 
-                case $url ==='products':
-                    $this->index();
-                    break;
+        //         case $url === 'create-products':
+        //             $method = $_SERVER['REQUEST_METHOD'];
+        //             if($method=='GET'){
+        //                 $this->create();
+        //             }else if($method=='POST'){
+        //                 if(isset($_POST['btnsubmit'])){
+        //                     $this->submit();
+        //                 }
+        //             }
+        //             break;
 
-                case $url === 'create-products':
-                    $method = $_SERVER['REQUEST_METHOD'];
-                    if($method=='GET'){
-                        $this->create();
-                    }else if($method=='POST'){
-                        if(isset($_POST['btnsubmit'])){
-                            $this->submit();
-                        }
-                    }
-                    break;
-
-                case $url === 'edit-products':
-                    $method = $_SERVER['REQUEST_METHOD'];
-                    if($method == 'GET'){
-                        $this->editProduct();
-                    }else if($method == 'POST'){
-                        if(isset($_POST['update'])){
-                            $this->updateProduct();
-                        }
-                    }
-                    break;
+        //         case $url === 'edit-products':
+        //             $method = $_SERVER['REQUEST_METHOD'];
+        //             if($method == 'GET'){
+        //                 $this->editProduct();
+        //             }else if($method == 'POST'){
+        //                 if(isset($_POST['update'])){
+        //                     $this->updateProduct();
+        //                 }
+        //             }
+        //             break;
                 
-                case $url === 'delete-products':
-                    $this->del();
-                    break;
-                default:
+        //         case $url === 'delete-products':
+        //             $this->del();
+        //             break;
+        //         default:
                     
-                    break;
-            }
-            // var_dump($url);die;
-        }
+        //             break;
+        //     }
+        //     // var_dump($url);die;
+        // }
 
         public function index()
         {
             $path = "";
             $products = Product::all();
-            include_once "app/views/product/index.php";
+            $view = "app/views/product/index.php";
+            include_once "app/views/layout/master.php";
         }
 
         public function create()
-       {
+        {
             $path = "";
             include_once "app/views/product/create.php";
         } 
@@ -109,9 +110,6 @@
             $products->update();
             header("location: ".$this->base_url);
         }
-        // public function pushView($view){
-        //     return $view;
-        // }  
     }
 
 ?>

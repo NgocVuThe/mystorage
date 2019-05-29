@@ -1,7 +1,7 @@
 <?php
-include_once "app/views/layout/header.php";
-include_once "app/views/layout/sidebar.php";
-include_once "app/views/layout/navbar.php";
+// include_once "app/views/layout/header.php";
+// include_once "app/views/layout/sidebar.php";
+// include_once "app/views/layout/navbar.php";
 ?>
 <section class="content">
     <div class="container-fluid">
@@ -54,5 +54,6 @@ include_once "app/views/layout/navbar.php";
       }
     </script>
 </head>
-<?php include_once "app/views/layout/footer.php";
+<?php 
+//include_once "app/views/layout/footer.php";
 ?>

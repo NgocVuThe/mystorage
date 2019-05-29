@@ -2,15 +2,19 @@
     require_once('vendor/autoload.php');
     use App\Controller\HomeController;
     use App\Controller\ProductController;
+    use App\Model\Route;
 
-    $controller = new ProductController();
-    $controller->controller();
+    // $controller = new ProductController();
+    // $controller->controller();
 
-    Route::url("/")
-
+    Route::get("/products", 'ProductController@index');
+    Route::get("/create-products", 'ProductController@create');
+    Route::get("/edit-products", 'ProductController@editProduct');
+    Route::get("/delete-products", 'ProductController@del');
+    
 ?>
 
-<html>
+<!-- <html>
 <head>    
 header
 </head>
@@ -24,4 +28,4 @@ header
             view
         </div>
     </div>
-</body>
+</body> -->
