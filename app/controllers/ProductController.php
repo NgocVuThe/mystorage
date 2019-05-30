@@ -2,60 +2,21 @@
     namespace App\Controller;
     // require_once('app/models/Product.php');
     use App\Model\Product;
-
+    use App\Controller\LoadView;
     class ProductController extends BaseController
     {   
-        
-        // public function controller()
-        // {
-        //     $url = isset( $_GET['url'] ) ? $_GET['url'] : '/';
-        //     // var_dump($url);die;
-        //     switch ($url) {
 
-        //         case $url ==='products':
-        //             $this->index();
-        //             break;
+        public function display($view, $data) {
 
-        //         case $url === 'create-products':
-        //             $method = $_SERVER['REQUEST_METHOD'];
-        //             if($method=='GET'){
-        //                 $this->create();
-        //             }else if($method=='POST'){
-        //                 if(isset($_POST['btnsubmit'])){
-        //                     $this->submit();
-        //                 }
-        //             }
-        //             break;
-
-        //         case $url === 'edit-products':
-        //             $method = $_SERVER['REQUEST_METHOD'];
-        //             if($method == 'GET'){
-        //                 $this->editProduct();
-        //             }else if($method == 'POST'){
-        //                 if(isset($_POST['update'])){
-        //                     $this->updateProduct();
-        //                 }
-        //             }
-        //             break;
-                
-        //         case $url === 'delete-products':
-        //             $this->del();
-        //             break;
-        //         default:
-                    
-        //             break;
-        //     }
-        //     // var_dump($url);die;
-        // }
+        }
 
         public function index()
         {
-            $path = "";
             $products = Product::all();
-            $view = "app/views/product/index.php";
-            include_once "app/views/layout/master.php";
+            $this->display("product/index", [
+                'products' => $products
+            ]);    
         }
-
         // ob_*
         // extract
 
@@ -63,8 +24,13 @@
 
         public function create()
         {
+            $load = new LoadView();
             $path = "";
-            include_once "app/views/product/create.php";
+            $load->load('layout/master', [
+                'path' => $path,
+                'data' => 'app/views/product/create.php'
+            ]);
+            $load->show();
         } 
 
         public function submit()
@@ -75,9 +41,7 @@
             $product->price = $_POST['price'];
             $product->description = $_POST['description'];
             $product->short_description = $_POST['short_description'];
-            $product->status = $_POST['status'];
-            // var_dump($product);die;
-            
+            $product->status = $_POST['status'];            
             $product->save();
             header("location: ".$this->base_url);
         }
@@ -93,10 +57,17 @@
         public function editProduct()
         {   
             if(isset($_GET['id'])){
+                $load = new LoadView();
+
                 $path = "";
                 $id = $_GET['id'];
                 $products = Product::find($id);
-                include_once "app/views/product/edit.php";
+                $load->load('layout/master',
+                                            ['data' => 'app/views/product/edit.php',
+                                             'products' => $products,
+                                             'path' => $path
+                                            ]);
+                $load->show();
             }
         }
 

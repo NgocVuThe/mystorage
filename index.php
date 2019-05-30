@@ -2,11 +2,11 @@
     require_once('vendor/autoload.php');
     use App\Controller\HomeController;
     use App\Controller\ProductController;
-    use App\Model\Route;
+    use App\Controller\Route;
 
     // $controller = new ProductController();
     // $controller->controller();
-
+    
     Route::get("/products", 'ProductController@index');
     Route::get("/create-products", 'ProductController@create');
     Route::get("/edit-products", 'ProductController@editProduct');

@@ -1,7 +1,7 @@
 <?php
-include_once "app/views/layout/header.php";
-include_once "app/views/layout/sidebar.php";
-include_once "app/views/layout/navbar.php";
+// include_once "app/views/layout/header.php";
+// include_once "app/views/layout/sidebar.php";
+// include_once "app/views/layout/navbar.php";
 ?>
 <script language = "javascript">
     function checkData(){
@@ -74,5 +74,5 @@ include_once "app/views/layout/navbar.php";
         </form>
     </div>
 </section>
-<?php include_once "app/views/layout/footer.php";?>
+
 

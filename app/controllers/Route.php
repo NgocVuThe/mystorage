@@ -1,5 +1,5 @@
 <?php
-namespace App\Model;
+namespace App\Controller;
 class Route
 {
     public function get($route, $action){
