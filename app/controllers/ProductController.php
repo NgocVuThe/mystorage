@@ -44,7 +44,7 @@
                 $path = "";
                 $id = $_GET['id'];
                 $products = Product::find($id);
-                $load->load('product/edit',['products' => $products,'path' => $path]);
+                $this->load('product/edit',['products' => $products,'path' => $path]);
             }
         }
 

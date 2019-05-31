@@ -1,9 +1,10 @@
 <?php
 namespace App\Model;
-use App\Model\BaseModel;
-// require_once('app/models/BaseModel.php');
+use Illuminate\Database\Eloquent\Model;
+// use App\Model\BaseModel;
+require_once('config/database.php');
 
-class Product extends BaseModel
+class Product extends Model
 {
     protected $table = 'products';
     public $columns = [
