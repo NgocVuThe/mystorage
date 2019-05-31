@@ -5,32 +5,16 @@
     use App\Controller\LoadView;
     class ProductController extends BaseController
     {   
-
-        public function display($view, $data) {
-
-        }
-
         public function index()
         {
             $products = Product::all();
-            $this->display("product/index", [
-                'products' => $products
-            ]);    
+            $path = "";
+            $this->load("product/index", ['path' => $path,'products' => $products]);
         }
-        // ob_*
-        // extract
-
-        // display("product.index", ['product'=> 'dfsdfsd']);
-
         public function create()
         {
-            $load = new LoadView();
             $path = "";
-            $load->load('layout/master', [
-                'path' => $path,
-                'data' => 'app/views/product/create.php'
-            ]);
-            $load->show();
+            $this->load('product/create',['path' => $path,'data' => 'app/views/product/create.php']);
         } 
 
         public function submit()
@@ -57,17 +41,10 @@
         public function editProduct()
         {   
             if(isset($_GET['id'])){
-                $load = new LoadView();
-
                 $path = "";
                 $id = $_GET['id'];
                 $products = Product::find($id);
-                $load->load('layout/master',
-                                            ['data' => 'app/views/product/edit.php',
-                                             'products' => $products,
-                                             'path' => $path
-                                            ]);
-                $load->show();
+                $load->load('product/edit',['products' => $products,'path' => $path]);
             }
         }
 

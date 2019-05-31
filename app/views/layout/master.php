@@ -8,7 +8,7 @@ require_once "app/views/layout/header.php";
     </div>
     <div class="col-md-10 content-right">
         <div class="content">
-        <?php include_once $data;?>
+        <?php $this->show();?>
         <?php include_once "app/views/layout/footer.php";?>
         </div>
     </div>

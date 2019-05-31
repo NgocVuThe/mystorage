@@ -11,7 +11,7 @@ class LoadView
         require "app/views/" . $view. ".php";
         $content = ob_get_clean();
         $this->__content[] = $content;
-        require "app/views/master.php";
+        require "app/views/layout/master.php";
     }
 
     public function show()
