@@ -2,8 +2,9 @@
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Container\Container;
- $capsule = new Capsule();
- $capsule->addConnection([
+
+$capsule = new Capsule();
+$capsule->addConnection([
      'driver' => 'mysql',
      'host' => 'localhost',
      'database' => 'db_vu_ngoc',

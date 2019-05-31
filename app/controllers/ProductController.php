@@ -1,16 +1,18 @@
 <?php
-    namespace App\Controller;
-    // require_once('app/models/Product.php');
-    use App\Model\Product;
-    use App\Controller\LoadView;
-    class ProductController extends BaseController
-    {   
-        public function index()
-        {
-            $products = Product::all();
-            $path = "";
-            $this->load("product/index", ['path' => $path,'products' => $products]);
-        }
+namespace App\Controller;
+
+use App\Model\Product;
+use App\Controller\LoadView;
+
+class ProductController extends BaseController
+{   
+    public function index()
+    {
+        $products = Product::all();
+        $path = "";
+        $this->load("product/index", ['path' => $path,'products' => $products]);
+        // var_dump($products);die;
+    }
         public function create()
         {
             $path = "";
@@ -25,7 +27,8 @@
             $product->price = $_POST['price'];
             $product->description = $_POST['description'];
             $product->short_description = $_POST['short_description'];
-            $product->status = $_POST['status'];            
+            $product->status = $_POST['status'];
+            var_dump($product->status = $_POST['status']);die;        
             $product->save();
             header("location: ".$this->base_url);
         }
@@ -34,7 +37,7 @@
         {
             $products = new Product();
             $id = $_GET['id'];
-            $products->delete($id);
+            $products->delete();
             header("location: ".$this->base_url);
         }
 
@@ -63,6 +66,6 @@
             $products->update();
             header("location: ".$this->base_url);
         }
-    }
+}
 
 ?>
